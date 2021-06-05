@@ -12,4 +12,4 @@ MacOS, Mojave, 2.2 GHz Intel Core i7, compiled with Apple LLVM version 10.0.1 (c
 
 Vector calculation with a class lazy::Vect is as fast as usual array (in this case, used std::vector) with double loop.
 
-(Somehow valarray is very fast, however.)
+(Why valarray is very fast is that the result of add calculation is given by auto. Maybe the valarray would be implemented by something like expression templte.)
