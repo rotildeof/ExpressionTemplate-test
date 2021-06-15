@@ -1,10 +1,10 @@
 #include "Lazy1.hh"
-#include <iostream>
-#include <vector>
-#include <chrono>
 #include <algorithm>
-#include <valarray>
+#include <chrono>
+#include <iostream>
 #include <numeric>
+#include <valarray>
+#include <vector>
 
 int main() {
     std::vector<double> a1(100000, 1);
@@ -20,7 +20,8 @@ int main() {
         count += a4[0];
     }
     auto t1 = std::chrono::system_clock::now();
-    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(t1 - t0).count() << " [us]  total = " << count << std::endl;
+    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(t1 - t0).count() << " [us]  total = " << count
+              << std::endl;
 
     count = 0;
     lazy::Vect b1(100000, 1);
@@ -33,7 +34,8 @@ int main() {
         count += b4[0];
     }
     t1 = std::chrono::system_clock::now();
-    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(t1 - t0).count() << " [us]  total = " << count << std::endl;
+    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(t1 - t0).count() << " [us]  total = " << count
+              << std::endl;
 
     count = 0;
     std::valarray<double> c1(1, 100000);
@@ -45,6 +47,6 @@ int main() {
         count += c4[i];
     }
     t1 = std::chrono::system_clock::now();
-    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(t1 - t0).count() << " [us]  total = " << count << std::endl;
-
+    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(t1 - t0).count() << " [us]  total = " << count
+              << std::endl;
 }
